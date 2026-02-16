@@ -1,6 +1,20 @@
 /**
  * Module UI - Gère le rendu HTML et les interactions visuelles.
  */
+const video = document.getElementById("bgVideo");
+
+video.pause(); // on empêche la lecture auto
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const maxScroll = document.body.scrollHeight - window.innerHeight;
+
+  const scrollPercent = scrollTop / maxScroll;
+
+  const maxVideoTime = 5; // limite à 5 secondes
+  video.currentTime = scrollPercent * maxVideoTime;
+});
+
 const UI = {
     domElements: {
         towers: document.querySelectorAll('.tower-container'),

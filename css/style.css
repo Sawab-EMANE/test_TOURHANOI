@@ -22,7 +22,7 @@ body {
     overflow-x: hidden;
 }
 
-#background-video {
+#bgVideo {
     position: fixed;
     top: 0;
     left: 0;
